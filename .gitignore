@@ -1,0 +1,17 @@
+#lang racket
+
+
+(define input-list '(1 4 6 2 7 3 8 5))
+
+(apply max input-list)
+
+(define maxval (apply max input-list)) 
+
+
+(define (new-list lst)
+  (if (> (modulo maxval lst) 0)
+      lst
+      empty))
+
+(filter number? (map new-list input-list))
+
